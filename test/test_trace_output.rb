@@ -1,14 +1,15 @@
-require File.expand_path('../helper', __FILE__)
-require 'stringio'
+# frozen_string_literal: true
+require File.expand_path("../helper", __FILE__)
+require "stringio"
 
-class TestTraceOutput < Rake::TestCase
+class TestTraceOutput < Rake::TestCase # :nodoc:
   include Rake::TraceOutput
 
-  class PrintSpy
+  class PrintSpy # :nodoc:
     attr_reader :result, :calls
 
     def initialize
-      @result = ""
+      @result = "".dup
       @calls = 0
     end
 
